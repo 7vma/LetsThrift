@@ -20,6 +20,7 @@ This online community can vary from day-to-day thrift haulers, to individuals wh
 ### POST:
 - Type
 - Brand
+- Image
 - Description
 - Condition
 - Price
