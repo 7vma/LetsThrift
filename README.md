@@ -24,11 +24,10 @@ This online community can vary from day-to-day thrift haulers, to individuals wh
 - Description
 - Condition
 - Price
+- Comments
 
-
-### Review:
-- in Post page
-- Bottom of the page
+### Review / Comments:
+- tied with post
 - users can communicate in a thread about specific item
 - open dialogue for community to see // full transperency 
 
