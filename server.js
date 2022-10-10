@@ -5,17 +5,14 @@
 require("dotenv").config();
 
 const mongoose = require('mongoose');
-
-// import express
 const express = require("express");
 const { PORT, MONGODB_URI } = process.env || 4000;
-// create application object
+// product router
 const productController = require('./controllers/product-controller')
 //const authController = require('./controllers/auth')
 
 const cors = require("cors")
 const morgan = require("morgan")
-
 const app = express();
 
 
@@ -37,7 +34,7 @@ app.use(express.json()); // parse json bodies - this will run before our request
 app.use(cors());app.use(cors()); // to prevent cors errors, open access to all origins
 app.use(morgan("dev")); // logging for development
 
-// all requests for endpoints that begin with '/people'
+// all requests for endpoints that begin with '/product'
 app.use('/product', productController)
 
 
@@ -47,7 +44,7 @@ app.use('/product', productController)
 	////////////////////////////////
 	// create a test route
 	app.get("/", (req, res) => {
-    res.send("hello world");
+    res.send("MountainxSea");
 	});
 
 ///////////////////////////////
