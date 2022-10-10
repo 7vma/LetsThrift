@@ -8,8 +8,9 @@ const mongoose = require('mongoose');
 const express = require("express");
 const { PORT, MONGODB_URI } = process.env || 4000;
 // product router
-const productController = require('./controllers/product-controller')
-//const authController = require('./controllers/auth')
+const productController = require('./controllers/product-controller');
+const authController = require('./controllers/auth');
+// const userController = require('./controllers/user-controller')
 
 const cors = require("cors")
 const morgan = require("morgan")
@@ -25,7 +26,7 @@ mongoose.connect(MONGODB_URI);
 mongoose.connection
     .on("open", () => console.log("Your are connected to the one and only mongoose"))
     .on("close", () => console.log("Your are disconnected from mongoose:'("))
-    .on("wack error", (error) => console.log(error));
+    .on("lame error", (error) => console.log(error));
 
 ///////////////////////////////
 // MIDDLEWARE
@@ -36,8 +37,8 @@ app.use(morgan("dev")); // logging for development
 
 // all requests for endpoints that begin with '/product'
 app.use('/product', productController)
-
-
+app.use("/auth", authController);
+// app.use("/user", userController)
 
 	///////////////////////////////
 	// ROUTES
