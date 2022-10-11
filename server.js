@@ -8,8 +8,9 @@ const mongoose = require('mongoose');
 const express = require("express");
 const { PORT, MONGODB_URI } = process.env || 4000;
 // product router
-const productController = require('./controllers/product-controller');
 const authController = require('./controllers/auth');
+const productController = require('./controllers/product-controller');
+
 // const userController = require('./controllers/user-controller')
 
 const cors = require("cors")

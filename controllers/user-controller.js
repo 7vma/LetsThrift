@@ -8,7 +8,7 @@ const {User} = require('../models')
 // PRODUCT INDEX ROUTE
 router.get("/", async (req, res) => {
 	try {
-    // get all people
+    // get all users
     res.json(await User.find({}));
     } catch (error) {
     //send error
@@ -19,7 +19,6 @@ router.get("/", async (req, res) => {
 // PRODUCT CREATE ROUTE
 router.post("/", async (req, res) => {
     try {
-    // create new person
     res.json(await User.create(req.body));
     } catch (error) {
     //send error
@@ -30,7 +29,6 @@ router.post("/", async (req, res) => {
 // PRODUCT SHOW ROUTE
 router.get("/:id", async (req, res) => {
     try {
-        // send one person
         res.json(await User.findById(req.params.id));
         } catch (error) {
         //send error

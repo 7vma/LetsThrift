@@ -7,14 +7,19 @@ const mongoose = require("mongoose");
 // MODELS
 ////////////////////////////////
 const ProductSchema = new mongoose.Schema({
-    type: String,
-    brand: String,
-    image: String,
-    description: String,
-    condition: String,
-    price: String,
-},{
-    timestamps: true});
+    type: {type: String},
+    brand: {type: String},
+    image: {type: String, required: true},
+    description: {type: String},
+    condition: {type: String},
+    price: {type: String, required: true},
+    owner: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+    }
+},
+{timestamps: true});
 
 const Product = mongoose.model("Product", ProductSchema);
 
