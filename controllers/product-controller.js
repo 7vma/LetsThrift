@@ -47,7 +47,8 @@ router.get("/:id", async (req, res, next) => {
 
 // PRODUCT UPDATE ROUTE
 // PUT api/product/5a7db6c74d55bc51bdf39793
-router.put("/:id", requireToken, async (req, res) => {
+// add requireToken after "/:id", 
+router.put("/:id" , async (req, res) => {
 	try {
 		handleValidateOwnership(req, await Product.findById(req.params.id))
 		const updatedProduct = await Product.findByIdAndUpdate(
@@ -64,7 +65,8 @@ router.put("/:id", requireToken, async (req, res) => {
 
   // PRODUCT DELETE ROUTE
   // DELETE api/product/5a7db6c74d55bc51bdf39793
-router.delete("/:id", requireToken,async (req, res, next) => {
+  // add requireToken after "/:id", 
+router.delete("/:id",async (req, res, next) => {
 	try {
 		handleValidateOwnership(req, await Product.findById(req.params.id));
 		const deletedProduct = await Product.findByIdAndRemove(req.params.id);
