@@ -50,7 +50,7 @@ router.get("/:id", async (req, res, next) => {
 // add requireToken after "/:id", 
 router.put("/:id" , async (req, res) => {
 	try {
-		handleValidateOwnership(req, await Product.findById(req.params.id))
+		// handleValidateOwnership(req, await Product.findById(req.params.id))
 		const updatedProduct = await Product.findByIdAndUpdate(
 			req.params.id,
 			req.body,
@@ -68,7 +68,7 @@ router.put("/:id" , async (req, res) => {
   // add requireToken after "/:id", 
 router.delete("/:id",async (req, res, next) => {
 	try {
-		handleValidateOwnership(req, await Product.findById(req.params.id));
+		// handleValidateOwnership(req, await Product.findById(req.params.id));
 		const deletedProduct = await Product.findByIdAndRemove(req.params.id);
 		res.status(200).json(deletedProduct);
 	} catch (err) {
