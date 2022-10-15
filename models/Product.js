@@ -11,7 +11,7 @@ const ProductSchema = new mongoose.Schema({
     brand: {type: String},
     image: {type: String, required: true},
     description: {type: String},
-    title: {title: String, required: true},
+    title: {type: String, required: true},
     condition: {type: String},
     price: {type: String, required: true},
     owner: {
